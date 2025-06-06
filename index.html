@@ -31,15 +31,31 @@
       height: 24px;
       display: inline-block;
     }
+    
+    /* Fixed logo container to prevent shifting */
+    .logo-container {
+      width: 200px; /* Fixed width */
+      height: 40px; /* Fixed height */
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    
+    .logo-container img {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition duration-300" id="body">
   <!-- Header -->
   <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 header-fixed">
     <div class="max-w-7xl mx-auto px-6 h-full flex justify-between items-center">
-      <a href="/" class="flex items-center space-x-2 h-10" style="height: 40px;">
-        <img src="logo-light.png" alt="Logo Light" class="h-full dark:hidden block">
-        <img src="logo-dark.png" alt="Logo Dark" class="h-full hidden dark:block">
+      <a href="/" class="logo-container">
+        <img src="logo-light.png" alt="Logo Light" class="dark:hidden block">
+        <img src="logo-dark.png" alt="Logo Dark" class="hidden dark:block">
       </a>
       <nav class="flex items-center space-x-6">
         <a href="case-studies.html" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition">Case Studies</a>
