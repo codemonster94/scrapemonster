@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scrapemonster.tech</title>
   <link rel="icon" href="monstericon.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -11,18 +10,37 @@
       darkMode: 'class'
     };
   </script>
+  <style>
+    .rotate-spin {
+      animation: spin360 0.6s ease-in-out;
+    }
+
+    @keyframes spin360 {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition duration-300" id="body">
   <!-- Header -->
   <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-         <a href="/" class="flex items-center space-x-2">
-  <img src="logo.png" alt="Scrapemonster Logo" class="h-10">
-</a>
+      <a href="/" class="flex items-center space-x-2">
+        <img src="logo.png" alt="Scrapemonster Logo" class="h-10">
+      </a>
       <nav class="flex items-center space-x-6">
         <a href="case-studies.html" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition">Case Studies</a>
         <a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded shadow hover:bg-indigo-700 transition">Contact Us</a>
-        <button onclick="toggleDarkMode()" class="ml-2 px-3 py-1 border rounded text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">🌓</button>
+        <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="ml-2 p-2 rounded transition">
+          <span id="theme-icon" class="inline-block transition-transform duration-500 ease-in-out">
+            <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 dark:hidden" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 0010.08 9.79z" />
+            </svg>
+            <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500 hidden dark:inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36 6.36l-1.42-1.42M7.05 7.05L5.64 5.64m12.02 0l-1.41 1.41M7.05 16.95l-1.41 1.41M12 8a4 4 0 100 8 4 4 0 000-8z" />
+            </svg>
+          </span>
+        </button>
       </nav>
     </div>
   </header>
@@ -43,27 +61,19 @@
       <div class="grid gap-8 md:grid-cols-2">
         <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow transform transition duration-500 hover:scale-105 hover:shadow-xl">
           <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Full-Site Product Scraping</h4>
-          <p class="text-gray-700 dark:text-gray-300">
-            We extract entire product catalogs from e-commerce sites and organize them cleanly for your business.
-          </p>
+          <p class="text-gray-700 dark:text-gray-300">We extract entire product catalogs from e-commerce sites and organize them cleanly for your business.</p>
         </div>
         <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow transform transition duration-500 hover:scale-105 hover:shadow-xl">
           <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Price & Stock Monitoring</h4>
-          <p class="text-gray-700 dark:text-gray-300">
-            Track real-time price and inventory changes of products across your competitors' websites.
-          </p>
+          <p class="text-gray-700 dark:text-gray-300">Track real-time price and inventory changes of products across your competitors' websites.</p>
         </div>
         <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow transform transition duration-500 hover:scale-105 hover:shadow-xl">
           <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Competitor Analysis Dashboards</h4>
-          <p class="text-gray-700 dark:text-gray-300">
-            Visual dashboards that reveal competitor trends, new launches, and pricing moves in your niche.
-          </p>
+          <p class="text-gray-700 dark:text-gray-300">Visual dashboards that reveal competitor trends, new launches, and pricing moves in your niche.</p>
         </div>
         <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow transform transition duration-500 hover:scale-105 hover:shadow-xl">
           <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Custom Datasets</h4>
-          <p class="text-gray-700 dark:text-gray-300">
-            We build datasets tailored to your niche – product features, reviews, categories, availability, and more.
-          </p>
+          <p class="text-gray-700 dark:text-gray-300">We build datasets tailored to your niche – product features, reviews, categories, availability, and more.</p>
         </div>
       </div>
     </div>
@@ -102,6 +112,9 @@
   <script>
     function toggleDarkMode() {
       document.getElementById('body').classList.toggle('dark');
+      const icon = document.getElementById('theme-icon');
+      icon.classList.add('rotate-spin');
+      setTimeout(() => icon.classList.remove('rotate-spin'), 600);
     }
   </script>
 </body>
