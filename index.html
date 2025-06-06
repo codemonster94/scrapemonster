@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scrapemonster.tech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-slate-100 to-indigo-100 dark:from-slate-900 dark:to-gray-800 text-gray-800 transition duration-300" id="body">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-gray-900 dark:to-gray-800 shadow-md dark:text-white">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Scrapemonster.tech</h1>
+      <nav class="flex items-center space-x-6">
+        <a href="case-studies.html" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition duration-300 font-medium">Case Studies</a>
+        <a href="#contact" class="bg-black text-white px-4 py-2 rounded shadow-md hover:bg-gray-800 transition duration-300 transform hover:scale-105">Contact Us</a>
+        <button onclick="toggleDarkMode()" class="ml-2 px-3 py-1 border rounded text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">🌓</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-20">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-4">Smart Web Scraping & Data Solutions for your Businesses</h2>
+      <p class="text-xl mb-6">Let us extract the insights while you grow your business. Fast, accurate, and hassle-free.</p>
+      <a href="#contact" class="bg-white text-indigo-700 px-6 py-3 rounded font-semibold shadow-lg hover:bg-gray-100 transform transition duration-300 hover:scale-105">Book a Free Consult</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-16 bg-gradient-to-br from-white via-slate-100 to-white dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-3xl font-bold text-center mb-12 dark:text-white">What We Offer</h3>
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="bg-white dark:bg-gray-100 dark:text-black p-6 rounded shadow-lg transform transition duration-300 hover:-translate-y-1 hover:scale-105">
+          <h4 class="text-xl font-semibold mb-2">Full-Site Product Scraping</h4>
+          <p>We extract entire product catalogs from e-commerce sites and organize them cleanly for your business.</p>
+        </div>
+        <div class="bg-white dark:bg-gray-100 dark:text-black p-6 rounded shadow-lg transform transition duration-300 hover:-translate-y-1 hover:scale-105">
+          <h4 class="text-xl font-semibold mb-2">Price & Stock Monitoring</h4>
+          <p>Track real-time price and inventory changes of products across your competitors' websites.</p>
+        </div>
+        <div class="bg-white dark:bg-gray-100 dark:text-black p-6 rounded shadow-lg transform transition duration-300 hover:-translate-y-1 hover:scale-105">
+          <h4 class="text-xl font-semibold mb-2">Competitor Analysis Dashboards</h4>
+          <p>Visual dashboards that reveal competitor trends, new launches, and pricing moves in your niche.</p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-100 dark:text-black p-6 rounded shadow-lg transform transition duration-300 hover:-translate-y-1 hover:scale-105">
+          <h4 class="text-xl font-semibold mb-2">Custom Datasets</h4>
+          <p>We build datasets tailored to your niche – product features, reviews, categories, availability, and more.</p>
+        </div>
+   
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16 bg-white/80 dark:bg-gray-800/80 dark:text-gray-100 backdrop-blur-sm">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold mb-6">Why Scrapemonster?</h3>
+      <p class="text-lg mb-4">We're the plug-and-play scraping solution for small brands who need real data without the tech headache.</p>
+      <p class="text-lg">Fast delivery. Clean output. Always on your terms.</p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="contact" class="py-20 bg-indigo-700 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold mb-4">Let’s Talk Data</h3>
+      <p class="mb-6">Tell us what data you need. We'll show you how fast we can get it.</p>
+      <form class="space-y-4 text-left max-w-xl mx-auto">
+        <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded bg-white text-black shadow-md" />
+        <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded bg-white text-black shadow-md" />
+        <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 rounded bg-white text-black shadow-md"></textarea>
+        <button class="bg-white text-indigo-700 px-6 py-3 rounded font-semibold shadow-lg hover:bg-gray-200 transform transition duration-300 hover:scale-105">Submit</button>
+      </form>
+      <p class="mt-6">Or directly book a call → <a href="https://calendly.com/your-link" target="_blank" class="underline font-semibold hover:text-yellow-200 transition">Calendly Link</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+    <p>&copy; 2025 Scrapemonster.tech. All rights reserved.</p>
+  </footer>
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    function toggleDarkMode() {
+      document.getElementById('body').classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
