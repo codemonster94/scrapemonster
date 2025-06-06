@@ -19,12 +19,24 @@
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
+    
+    /* Fixed header height to prevent jumping */
+    .header-fixed {
+      height: 72px; /* Fixed height */
+    }
+    
+    /* Ensure consistent icon sizing */
+    .theme-icon {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition duration-300" id="body">
   <!-- Header -->
-  <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+  <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 header-fixed">
+    <div class="max-w-7xl mx-auto px-6 h-full flex justify-between items-center">
       <a href="/" class="flex items-center space-x-2 h-10" style="height: 40px;">
         <img src="logo-light.png" alt="Logo Light" class="h-full dark:hidden block">
         <img src="logo-dark.png" alt="Logo Dark" class="h-full hidden dark:block">
@@ -34,10 +46,10 @@
         <a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded shadow hover:bg-indigo-700 transition">Contact Us</a>
         <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="ml-2 p-2 rounded transition">
           <span id="theme-icon" class="inline-block transition-transform duration-500 ease-in-out">
-            <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 dark:hidden" fill="currentColor" viewBox="0 0 24 24">
+            <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="theme-icon text-gray-500 dark:hidden" fill="currentColor" viewBox="0 0 24 24">
               <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 0010.08 9.79z" />
             </svg>
-            <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500 hidden dark:inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="theme-icon text-yellow-500 hidden dark:inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36 6.36l-1.42-1.42M7.05 7.05L5.64 5.64m12.02 0l-1.41 1.41M7.05 16.95l-1.41 1.41M12 8a4 4 0 100 8 4 4 0 000-8z" />
             </svg>
           </span>
@@ -94,7 +106,7 @@
   <!-- Contact CTA -->
   <section id="contact" class="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold mb-4">Let’s Talk Data</h3>
+      <h3 class="text-3xl font-bold mb-4">Let's Talk Data</h3>
       <p class="mb-6">Tell us what data you need. We'll show you how fast we can get it.</p>
       <form class="space-y-4 text-left max-w-xl mx-auto">
         <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded bg-white text-black shadow" />
